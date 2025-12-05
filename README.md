@@ -79,6 +79,7 @@ app/
 ## 🎯 Summary
 
 The app demonstrates smart use of Android mechanisms:
+
 ✔ WiFi
 
 ✔ Bluetooth
