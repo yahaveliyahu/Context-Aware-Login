@@ -10,30 +10,35 @@ The app was developed as part of a course exercise, and aims to demonstrate the 
 
 The app allows connection only if all 6 conditions are met:
 
-1️⃣+2️⃣ **Battery Level + Password Context**
+1️⃣**+**2️⃣ **Battery Level + Password Context**
 The condition checks two things:
 The battery percentage is between 40% and 80%
 The password the user entered contains the battery percentage (e.g.: battery=57 → pass57word")
+
 **Implementation:** BatteryManager + substring check.
 
 3️⃣ **Bluetooth Device Connected**
 Checks whether the device is connected to a specific type of Bluetooth headset (e.g. LG-TONE-FP9).
 The application scans the active audio devices and verifies the device name.
+
 **Implementation:** AudioManager, AudioDeviceInfo.
 
 4️⃣ **Noise Threshold (Microphone Test)**
 Checks if there is enough noise in the environment.
 The application records 300ms from the microphone, calculates the maximum amplitude and compares it to the threshold (NOISE_THRESHOLD = 100)
+
 **Implementation:** AudioRecord
 
 5️⃣ **WiFi Scan – Specific SSID**
 Checks if a specific WiFi network is nearby (e.g. "YAHAV").
 The app performs a WiFi scan, listens for SCAN_RESULTS_AVAILABLE and checks if the SSID matches
+
 **Implementation:** WifiManager, BroadcastReceiver.
 
 6️⃣ **Smile Detection – ML Kit**
 Checks if the user is smiling in front of the camera.
 Launches device camera, receives thumbnail image, processes it with ML Kit for face recognition and checks if smile level ≥ 70%
+
 **Implementation:** ML Kit Face Detection API.
 
 **All Conditions Summary**
@@ -74,12 +79,21 @@ app/
 ## 🎯 Summary
 
 The app demonstrates smart use of Android mechanisms:
+
 ✔ WiFi
-✔ Bluetooth
+
+✔ Bluetoothc
+
 ✔ Battery Manager
+
 ✔ Microphone AudioRecord
+
 ✔ Camera
+
 ✔ ML Kit Face Detection
+
 ✔ Coroutines
+
 ✔ Permissions API
+
 and implements a context-based login system.
